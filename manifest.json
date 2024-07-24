@@ -1,14 +1,14 @@
 {
-  "name": "GitHub Noti",
+  "name": "GitHub Notification Blocker",
   "version": "0.1.0",
   "description": "",
-  "host_permissions": ["https://*.github.com/*"],
+  "host_permissions": ["https://www.github.com/*"],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["https://*.github.com/*"],
+      "matches": ["https://www.github.com/*"],
       "js": ["contentScript.js"]
     }
   ],
