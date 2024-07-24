@@ -1,17 +1,20 @@
 {
   "name": "GitHub Notification Blocker",
+  "manifest_version": 3,
   "version": "0.1.0",
-  "description": "",
-  "host_permissions": ["https://www.github.com/*"],
-  "background": {
-    "service_worker": "background.js"
-  },
+  "description": "GitHub Notification Blocker",
   "content_scripts": [
     {
-      "matches": ["https://www.github.com/*"],
+      "//": "not? https://www.github.com/* ?",
+      "//": "ys https://github.com/* ?",
+      "//": "ys *://*.github.com/* ?",
+      "matches": ["*://*.github.com/*"],
       "js": ["contentScript.js"]
     }
   ],
 
-  "manifest_version": 3
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "permissions": ["storage"]
 }
